@@ -1,0 +1,432 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+img {
+  width: auto;
+  height: auto;
+}
+
+.app {
+  background-color: #282c34;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  display: flex;
+  overflow: hidden;
+  height: 100vh;
+
+  .logo {
+    width: 180px;
+    position: absolute;
+    z-index: 10;
+    top: 1em;
+    left: 2em;
+  }
+
+  .body {
+    height: 100%;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .bodyFront {
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      margin-top: 60px;
+
+      .bookCover {
+        width: 300px;
+        animation-duration: 17s;
+        animation-name: productMovement;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        cursor: pointer;
+        transition: filter 0.4s;
+      }
+      .bookCover:hover {
+        filter: brightness(0.6);
+      }
+  
+      .amazonbtn {
+        width: 260px;
+        margin-top: 40px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .amazonbtn:hover {
+        transform: scale(1.05);
+      }
+
+      .socials {
+        display: flex;
+        margin-top: 24px;
+        justify-content: space-between;
+        align-items: center;
+        width: 120px;
+        
+         img {
+          width: 32px;
+          cursor: pointer;
+         }
+         img:hover {
+          filter: brightness(0.6);
+         }
+      }
+    }
+
+    .vidContainer {
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      top: 0;
+
+      img {
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        transform: scale(1.2);
+      }
+
+      video {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.main {
+  flex: 1;
+}
+
+
+.slideoutContainer {
+  position: relative;
+}
+
+.slideout {
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  background-color: #0e0e11;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -480px;
+  width: 480px;
+  transition: right ease-out .3s;
+
+  .toggles {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    right: 67px;
+    height: 236px;
+  }
+
+  .slideToggle {
+    width: 40px;
+  }
+
+  .slideoutToggleButton {
+    transform: rotate(-90deg);
+    background-color: #B8FFFC;
+    border-radius: 10px 10px 0px 0px;
+    border: 1px solid #000;
+    cursor: pointer;
+    width: 84px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: filter 0.2s;
+
+    .slideoutIcon {
+      transform: rotate(90deg);
+      width: 24px;
+      height: 40px;
+    }
+
+    .slideoutIconBrain {
+      width: auto;
+      height: 32px;
+    }
+    
+    .slideoutIconFrame {
+      width: 34px;
+      height: auto;
+      transform-origin: top;
+      position: relative;
+      bottom: -18px;
+      left: 17px;
+    }
+  }
+  
+  .slideoutToggleButton:hover {
+    filter: brightness(0.6)
+  }
+
+  .slideoutToggleButton.selected {
+    background-color: #81b6b4;
+  }
+
+  .slideoutMain {
+    width: 100%;
+    max-width: 400px;
+    padding-right: 40px;
+
+    .iconClose {
+      width: 16px;
+      position: absolute;
+      top: 0.5em;
+      right: 0.5em;
+      padding: 4px;
+      cursor: pointer;
+    }
+
+    .slideoutHeader {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      height: 146px;
+      margin-bottom: 48px;
+
+      .headerImgA {
+        height: 14px;
+        margin-bottom: 12px;
+      }
+
+      .headerImgB {
+        height: 72px;
+      }
+
+      .headerImgC {
+        height: 20px;
+        margin-top: 4px;
+      }
+
+    }
+
+    .slideoutBody {
+
+      p {
+        font-size: 16px;
+        line-height: 26px;
+      }
+      p.alignCenter {
+        text-align: center;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.icon-speaker-play {
+  z-index: 20;
+  position: absolute;
+  width: 30px;
+  bottom: 1em;
+  left: 2em;
+  cursor: pointer;
+}
+.icon-speaker {
+  z-index: 20;
+  position: absolute;
+  width: 17px;
+  bottom: 1em;
+  left: 2em;
+  cursor: pointer;
+}
+.icon-speaker:hover, .icon-speaker-play:hover {
+  filter: brightness(0.8);
+}
+
+.show {
+  display: flex;
+  flex-direction: column;
+}
+
+.hide {
+  display: none !important;
+}
+
+.artStillsContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .artStillsTitle {
+    width: 300px;
+    margin-bottom: 16px;
+  }
+  
+  h4 {
+    color: #b8fffc;
+    margin: 0 0 30px;
+    font-size: 17px;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .artStills {
+    height: 76vh;
+    overflow: scroll;
+  
+    video {
+      width: 400px;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+}
+
+.author {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h4 {
+    color: #b8fffc;
+    margin: 0 0 16px;
+    font-size: 17px;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .authorTitle {
+    width: 300px;
+    margin-bottom: 32px;
+  }
+
+  .authorHeadshot {
+    width: 280px;
+    margin-bottom: 24px;
+  }
+
+  .authorContent {
+    overflow-y: scroll;
+
+    p {
+      font-size: 16px;
+      line-height: 26px;
+      width: 100%;
+    }
+  }
+}
+
+
+.slideout.visible {
+  right: 0;
+}
+
+.slideoutIconWiggle {
+  animation-duration: 4s;
+  animation-name: wiggle;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.slideoutIconBlastoff {
+  animation-duration: 4s;
+  animation-name: rocketBlastoff;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes productMovement {
+  10% {translate: 0 0 ; scale: 1}
+  20% {translate: -5px -8px; scale: 0.99}
+  30% {translate: -8px -12px; scale: 0.98}
+  40% {translate: -12px -15px; scale: 0.97}
+  50% {translate: -5px -18px; scale: 0.96}
+  65% {translate: 5px -12px; scale: 0.94}
+  75% {translate: 10px -8px; scale: 0.98}
+  80% {translate: 5px -4px; scale: 0.99}
+  85% {translate: 0 0 ; scale: 1}
+  92% {translate: 0 4px ; scale: 1.01}
+  98% {translate: 0 0 ; scale: 1}
+}
+
+@keyframes wiggle {
+  40% {rotate: 0deg}
+  42% {rotate: 10deg}
+  44% {rotate: 0deg}
+  46% {rotate: -10deg}
+  48% {rotate: 0deg}
+  50% {rotate: 10deg}
+  52% {rotate: 0deg}
+  54% {rotate: -10deg}
+  56% {rotate: 0deg}
+}
+
+@keyframes rocketBlastoff {
+  10% {rotate: 0deg }
+  12% {rotate: 10deg}
+  14% {rotate: 0deg}
+  16% {rotate: -10deg}
+  18% {rotate: 0deg}
+  20% {rotate: 10deg}
+  22% {rotate: 0deg}
+  24% {rotate: -10deg}
+  26% {rotate: 0deg; translate: 0 0}
+  70% {translate: 12px 0}
+  75% {translate: 0 0}
+}
+
+
+@media only screen and (max-width: 768px) {
+  .slideout {
+    width: 100vw;
+
+    .slideoutMain {
+
+      .slideoutHeader {
+        margin-bottom: 24px;
+      }
+      .slideoutBody p {
+        font-size: 14px;
+        line-height: 26px;
+      }
+    }
+  }
+  .slideout.slideoutMobile {
+    right: -100vw;
+  }
+  .slideout.slideoutMobile.visible {
+    right: 0;
+  }
+
+  .artStills {
+    height: 70vh !important;
+
+    video {
+      width: 100% !important;
+    }
+  }
+}
