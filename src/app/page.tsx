@@ -25,8 +25,9 @@ import LogoYoutube from '../../public/assets/logo-youtube.png'
 
 export default function Home() {
   const [visible, setVisible] = useState(false);
-  const [isPlay, setIsPlay] = useState(false);
-  const [audio] = useState(new Audio('./assets/our_new_world.mp4'));
+  // const [isPlay, setIsPlay] = useState(false);
+  // const [audio, setAudio] = useState(null)
+
   const [screenWidth] = useState(window.innerWidth);
   const [contentType, setContentType] = useState('SYNOPSIS');
   const productUrl = "https://www.amazon.ca/dp/B0D9P5ZJBB/ref=sr_1_9?dib=eyJ2IjoiMSJ9.WAf-yxkuQ-BjNeY6TXY18Z1Zb5BeU5dYq1NIyo9rykLk7NngDtfDWl9L_KfvRofAaRwi75dP4Kaxdk6QeXggBGRGLGLDVj-aib0CX8pzRRZF7YG5JJxmuXxM1FIaOGb6_dIXmj3oJNF3-2xxPnKH-VtVhAwG4P6xSLMfGeult_X2QQAhsikbXSAhOoHGYuBY7i84TIQA_bWz5wRy7SdyuA.56XncXdW6bu9clgEv24lSQbcSWVrj5iyfspVxqZF25o&dib_tag=se&keywords=ty+murphy&qid=1721328865&sr=8-9";
@@ -44,15 +45,19 @@ export default function Home() {
     // }, 1500)
   }, []);
 
+  // useEffect(() => {
+  //   setAudio(new Audio('./assets/our_new_world.mp4')) // only call client
+  // }, []);
+
   const setContent = (type: string) => {
     setContentType(type);
     setVisible(true);
   }
 
-  const playMusic = () => {
-    !isPlay ? audio.play() : audio.pause();
-    setIsPlay(!isPlay);
-  }
+  // const playMusic = () => {
+  //   !isPlay ? audio.play() : audio.pause();
+  //   setIsPlay(!isPlay);
+  // }
 
   const getContentSynopsis = () => (
     <div className={contentType == 'SYNOPSIS' ? 'show' : 'hide'}>
@@ -140,6 +145,15 @@ export default function Home() {
     </div>
   );
 
+  const getMusicPlayer = () => {
+    return (
+      <>
+       {/* {isPlay && <Image src={SpeakerPlay} alt='' className='icon-speaker-play' onClick={() => playMusic()}/>}
+       {!isPlay && <Image src={Speaker} alt='' className='icon-speaker' onClick={() => playMusic()}/>} */}
+      </>
+    );
+  }
+
   return (
     <div className='app'>
       <div className='main'>
@@ -193,9 +207,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      {isPlay && <Image src={SpeakerPlay} alt='' className='icon-speaker-play' onClick={() => playMusic()}/>}
-      {!isPlay && <Image src={Speaker} alt='' className='icon-speaker' onClick={() => playMusic()}/>}
     </div>
   );
 }
