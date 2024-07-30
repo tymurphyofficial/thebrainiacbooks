@@ -28,7 +28,7 @@ export default function Home() {
   // const [isPlay, setIsPlay] = useState(false);
   // const [audio, setAudio] = useState(null)
 
-  const [screenWidth] = useState(window.innerWidth);
+  // const [screenWidth] = useState(window.innerWidth);
   const [contentType, setContentType] = useState('SYNOPSIS');
   const productUrl = "https://www.amazon.ca/dp/B0D9P5ZJBB/ref=sr_1_9?dib=eyJ2IjoiMSJ9.WAf-yxkuQ-BjNeY6TXY18Z1Zb5BeU5dYq1NIyo9rykLk7NngDtfDWl9L_KfvRofAaRwi75dP4Kaxdk6QeXggBGRGLGLDVj-aib0CX8pzRRZF7YG5JJxmuXxM1FIaOGb6_dIXmj3oJNF3-2xxPnKH-VtVhAwG4P6xSLMfGeult_X2QQAhsikbXSAhOoHGYuBY7i84TIQA_bWz5wRy7SdyuA.56XncXdW6bu9clgEv24lSQbcSWVrj5iyfspVxqZF25o&dib_tag=se&keywords=ty+murphy&qid=1721328865&sr=8-9";
   const instagramUrl = "https://www.instagram.com/tymurphybooks";
@@ -37,6 +37,8 @@ export default function Home() {
 
   useEffect(() => {
     setContentType('SYNOPSIS');
+
+
 
     // setTimeout(() => {
     //   if (screenWidth > 768) {
@@ -161,12 +163,23 @@ export default function Home() {
         
         <div className='body'>
           <div className='bodyFront'>
-            <Image className='bookCover' src={Book} alt='' onClick={() => window.open(productUrl, '_blank')}/>
-            <Image className='amazonbtn' src={AmazonBtn} alt='' onClick={() => window.open(productUrl, '_blank')}/>
+            <a target="_blank" href={productUrl} rel="noopener noreferrer">
+              <Image className='bookCover' src={Book} alt=''/>
+            </a>
+            <a target="_blank" href={productUrl} rel="noopener noreferrer">
+              <Image className='amazonbtn' src={AmazonBtn} alt=''/>
+            </a>
+
             <div className='socials'>
-              <Image src={LogoInstagram} alt='' onClick={() => window.open(instagramUrl, '_blank')}/>
-              <Image src={LogoYoutube} alt='' onClick={() => window.open(youtubeUrl, '_blank')}/>
-              <Image src={LogoTiktok} alt='' onClick={() => window.open(tiktokUrl, '_blank')}/>
+              <a target="_blank" href={instagramUrl} rel="noopener noreferrer">
+                <Image src={LogoInstagram} alt=''/>
+              </a>
+              <a target="_blank" href={youtubeUrl} rel="noopener noreferrer">
+                <Image src={LogoYoutube} alt=''/>
+              </a>
+                <a target="_blank" href={tiktokUrl} rel="noopener noreferrer">
+                <Image src={LogoTiktok} alt=''/>
+              </a>
             </div>
           </div>
 
