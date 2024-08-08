@@ -33,6 +33,15 @@ img {
     left: 2em;
   }
 
+  .authorName {
+    position: absolute;
+    z-index: 10;
+    top: 1.5em;
+    right: 2em;
+    width: 100px;
+    height: auto;
+  }
+
   .body {
     height: 100%;
     max-height: 100vh;
@@ -113,6 +122,27 @@ img {
 
 .main {
   flex: 1;
+}
+
+.books {
+  z-index: 20;
+  position: absolute;
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  margin-left: 1em;
+
+  .bookSmall {
+    width: 100px;
+    height: max-content;
+    cursor: pointer;
+    margin-bottom: 1em;
+    filter: brightness(0.75);
+    transition: filter 0.4s;
+  }
+  .bookSmall:hover {
+    filter: brightness(1);
+  }
 }
 
 
@@ -280,7 +310,7 @@ img {
   }
   
   h4 {
-    color: #b8fffc;
+    color: #fff;
     margin: 0 0 30px;
     font-size: 17px;
     font-weight: 800;
@@ -311,7 +341,7 @@ img {
   align-items: center;
 
   h4 {
-    color: #b8fffc;
+    color: #fff;
     margin: 0 0 16px;
     font-size: 17px;
     font-weight: 800;

@@ -2,8 +2,11 @@
 import { useState, useEffect } from 'react';
 import Image from "next/image";
 
-import Book from '../../public/assets/TheMissingPlanet.png';
+import BookPlanet from '../../public/assets/book-planet.png';
+import BookMoon from '../../public/assets/book-moon.png';
 import BrainiacBooks from '../../public/assets/brainiac-books.png'
+import BrainiacBooksMoon from '../../public/assets/brainiac-books-moon.png'
+import Author from '../../public/assets/author.png';
 import AmazonBtn from '../../public/assets/amazon-btn.png'
 import Mask2 from '../../public/assets/mask2.png'
 import CopyEmbark from '../../public/assets/copy-embark.png';
@@ -12,11 +15,13 @@ import CopyAdventure from '../../public/assets/copy-adventure.png';
 import RocketIcon from '../../public/assets/icon-rocket.png';
 import Brain from '../../public/assets/brain.png';
 import Frame from '../../public/assets/frame.png';
-import SpeakerPlay from '../../public/assets/icon-speaker-play.png';
-import Speaker from '../../public/assets/icon-speaker.png'
+// import SpeakerPlay from '../../public/assets/icon-speaker-play.png';
+// import Speaker from '../../public/assets/icon-speaker.png'
 import Headshot from '../../public/assets/headshot.png';
-import Artwork from '../../public/assets/artwork.png';
+import TitleArtwork from '../../public/assets/artwork.png';
+import TitleArtworkMoon from '../../public/assets/artwork-moon.png';
 import TitleAuthor from '../../public/assets/titleAuthor.png'
+import TitleAuthorMoon from '../../public/assets/author-moon.png';
 import IconClose from '../../public/assets/icon-close.png';
 import LogoInstagram from '../../public/assets/logo-instagram.png';
 import LogoTiktok from '../../public/assets/logo-tiktok.png';
@@ -30,16 +35,17 @@ export default function Home() {
 
   // const [screenWidth] = useState(window.innerWidth);
   const [contentType, setContentType] = useState('SYNOPSIS');
+  const [activeBook, setActiveBook] = useState('PLANET');
+  const [lastActiveBook, setLastActiveBook] = useState('MOON');
+  const [backgroundVideo, setBackgroundVideo] = useState("./assets/space-loop.mp4");
   const productUrl = "https://www.amazon.ca/dp/B0D9P5ZJBB/ref=sr_1_9?dib=eyJ2IjoiMSJ9.WAf-yxkuQ-BjNeY6TXY18Z1Zb5BeU5dYq1NIyo9rykLk7NngDtfDWl9L_KfvRofAaRwi75dP4Kaxdk6QeXggBGRGLGLDVj-aib0CX8pzRRZF7YG5JJxmuXxM1FIaOGb6_dIXmj3oJNF3-2xxPnKH-VtVhAwG4P6xSLMfGeult_X2QQAhsikbXSAhOoHGYuBY7i84TIQA_bWz5wRy7SdyuA.56XncXdW6bu9clgEv24lSQbcSWVrj5iyfspVxqZF25o&dib_tag=se&keywords=ty+murphy&qid=1721328865&sr=8-9";
   const instagramUrl = "https://www.instagram.com/tymurphybooks";
   const youtubeUrl = "https://www.youtube.com/@tylermurphy8963";
   const tiktokUrl = "https://www.tiktok.com/@tymurphyofficial"; 
 
+
   useEffect(() => {
     setContentType('SYNOPSIS');
-
-
-
     // setTimeout(() => {
     //   if (screenWidth > 768) {
     //     setVisible(true);
@@ -85,10 +91,10 @@ export default function Home() {
   const getContentAuthor = () => (
     <div className={contentType == 'AUTHOR' ? 'author show' : 'author hide'}>
       <h4>ABOUT THE</h4>
-      <Image className='authorTitle' src={TitleAuthor} alt=''/>
+      <Image className='authorTitle' src={getTitleAuthor()} alt=''/>
       <Image className='authorHeadshot' src={Headshot} alt=''/>
       <div className='authorContent'>
-        <p><b>TY MURPHY</b> created the <i>BRAINIAC: CHOOSE YOUR OWN ADVENTURE</i> series to challenge young readers to think, all while fostering a life-long love for reading.</p>
+        <p><b>TY MURPHY</b> created <b>BRAINIAC BOOKS</b> to challenge young readers to think, all while fostering a life-long love for reading.</p>
         <p>A self-taught engineer trained in neuroscience, Ty has always been an avid reader and writer with the tendency to question the world around him.</p>
         <p>As a writer, Ty Murphy <b><i>has never</i></b> and <b><i>will never</i></b> use AI for his writing.</p>
         <p>Find Ty on his socials <b>@tymurphyofficial</b>.</p>
@@ -98,7 +104,7 @@ export default function Home() {
 
   const getContentArt = () => (
     <div className={contentType == 'ART' ? 'artStillsContainer show' : 'artStillsContainer hide'}>
-      <Image className='artStillsTitle' src={Artwork} alt=''/>
+      <Image className='artStillsTitle' src={getTitleArtwork()} alt=''/>
       <h4>Enjoy some artwork from the book!*</h4>
 
       <div className='artStills'>
@@ -156,15 +162,81 @@ export default function Home() {
     );
   }
 
+  const getColor = (): string => {
+    switch (activeBook) {
+      case 'PLANET':
+        return '#81b6b4';
+      case 'MOON':
+        return '#FF5C5C';
+      default:
+        return '#81b6b4';
+    }
+  }
+
+  const getLogo = () => {
+    switch (activeBook) {
+      case 'PLANET':
+        return BrainiacBooks;
+      case 'MOON':
+        return BrainiacBooksMoon;
+      default:
+        return BrainiacBooks;
+    }
+  }
+
+  const getTitleAuthor = () => {
+    switch (activeBook) {
+      case 'PLANET':
+        return TitleAuthor;
+      case 'MOON':
+        return TitleAuthorMoon;
+      default:
+        return TitleAuthor;
+    }
+  }
+
+  const getTitleArtwork = () => {
+    switch (activeBook) {
+      case 'PLANET':
+        return TitleArtwork;
+      case 'MOON':
+        return TitleArtworkMoon;
+      default:
+        return TitleArtwork;
+    }
+  }
+
+  const getBookCover = () => {
+    switch (activeBook) {
+      case 'PLANET':
+        return BookPlanet;
+      case 'MOON':
+        return BookMoon;
+      default:
+        return BookPlanet;
+    }
+  }
+
+  const onSetActiveBook = (book: string) => {
+    setLastActiveBook(activeBook);
+    setActiveBook(book)
+  }
+
   return (
     <div className='app'>
+      <div className='books'>
+        {/* {lastActiveBook == 'MOON' && ( <Image className='bookSmall' src={BookMoon} alt='' onClick={() => onSetActiveBook('MOON')}/>)} */}
+        {lastActiveBook == 'PLANET' && (<Image className='bookSmall' src={BookPlanet} alt='' onClick={() => onSetActiveBook('PLANET')}/>)}
+      </div>
+
       <div className='main'>
-        <Image className='logo' src={BrainiacBooks} alt=''/>
+        <Image className='logo' src={getLogo()} alt=''/>
+        <Image className='authorName' src={Author} alt=''/>
         
         <div className='body'>
           <div className='bodyFront'>
             <a target="_blank" href={productUrl} rel="noopener noreferrer">
-              <Image className='bookCover' src={Book} alt=''/>
+              <Image className='bookCover' src={getBookCover()} alt=''/>
             </a>
             <a target="_blank" href={productUrl} rel="noopener noreferrer">
               <Image className='amazonbtn' src={AmazonBtn} alt=''/>
@@ -185,9 +257,16 @@ export default function Home() {
 
           <div className='vidContainer'>
             <Image src={Mask2} alt=''/>
-            <video loop autoPlay muted>
-              <source src={'./assets/space-loop.mp4'} type="video/mp4" />
-            </video>
+            {activeBook == "PLANET" && (
+              <video loop autoPlay muted>
+                <source src="./assets/galaxies-vid.mp4" type="video/mp4" />
+              </video>
+            )}
+            {activeBook == "MOON" && (
+              <video loop autoPlay muted>
+                <source src="./assets/earth-behind-moon-vid.mp4" type="video/mp4" />
+              </video>
+            )}
           </div>
         </div>
       </div>
@@ -196,17 +275,26 @@ export default function Home() {
         <div className={visible ? 'slideout slideoutMobile visible' : 'slideout slideoutMobile'}>
           <div className='toggles'>
             <div className='slideToggle'>
-              <div className={visible && contentType == 'SYNOPSIS' ? 'slideoutToggleButton selected' : 'slideoutToggleButton'} onClick={() => setContent('SYNOPSIS')}>
+              <div 
+                className={visible && contentType == 'SYNOPSIS' ? 'slideoutToggleButton selected' : 'slideoutToggleButton'} 
+                style={{ backgroundColor: getColor() }}
+                onClick={() => setContent('SYNOPSIS')}>
                 <Image src={RocketIcon} alt='' className={visible && contentType == 'SYNOPSIS' ? 'slideoutIcon slideoutIconBlastoff' : 'slideoutIcon'}/>
               </div>
             </div>
             <div className='slideToggle'>
-              <div className={visible && contentType == 'AUTHOR' ? 'slideoutToggleButton selected' : 'slideoutToggleButton'} onClick={() => setContent('AUTHOR')}>
+              <div 
+                className={visible && contentType == 'AUTHOR' ? 'slideoutToggleButton selected' : 'slideoutToggleButton'}
+                style={{ backgroundColor: getColor() }}
+                onClick={() => setContent('AUTHOR')}>
                 <Image src={Brain} alt='' className='slideoutIcon slideoutIconBrain'/>
               </div>
             </div>
             <div className='slideToggle'>
-              <div className={visible && contentType == 'ART' ? 'slideoutToggleButton selected' : 'slideoutToggleButton'} onClick={() => setContent('ART')}>
+              <div 
+                className={visible && contentType == 'ART' ? 'slideoutToggleButton selected' : 'slideoutToggleButton'} 
+                style={{ backgroundColor: getColor() }}
+                onClick={() => setContent('ART')}>
                 <Image src={Frame} alt='' className={visible && contentType == 'ART' ? 'slideoutIcon slideoutIconFrame slideoutIconWiggle' : 'slideoutIcon slideoutIconFrame'}/>
               </div>
             </div>
