@@ -225,8 +225,8 @@ export default function Home() {
   return (
     <div className='app'>
       <div className='books'>
-        {/* {lastActiveBook == 'MOON' && ( <Image className='bookSmall' src={BookMoon} alt='' onClick={() => onSetActiveBook('MOON')}/>)} */}
-        {lastActiveBook == 'PLANET' && (<Image className='bookSmall' src={BookPlanet} alt='' onClick={() => onSetActiveBook('PLANET')}/>)}
+        {/* {lastActiveBook == 'MOON' && ( <Image className='bookSmall' src={BookMoon} alt='' onClick={() => onSetActiveBook('MOON')}/>)}
+        {lastActiveBook == 'PLANET' && (<Image className='bookSmall' src={BookPlanet} alt='' onClick={() => onSetActiveBook('PLANET')}/>)} */}
       </div>
 
       <div className='main'>
