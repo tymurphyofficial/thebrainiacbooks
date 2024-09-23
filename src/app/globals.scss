@@ -22,56 +22,93 @@ img {
   font-size: calc(10px + 2vmin);
   color: white;
   display: flex;
-  overflow: hidden;
-  height: 100vh;
+  flex-direction: column;
+
+  nav {
+    margin: 1em 2em;
+    z-index: 10;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   .logo {
     width: 180px;
-    position: absolute;
-    z-index: 10;
-    top: 1em;
-    left: 2em;
   }
 
   .authorName {
-    position: absolute;
-    z-index: 10;
-    top: 1.5em;
-    right: 2em;
     width: 100px;
-    height: auto;
+    height: fit-content;
   }
 
-  .body {
-    height: 100%;
-    max-height: 100vh;
+  .section {
+    height: 75%;
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    .bodyFront {
-      z-index: 10;
+    h1 {
+      z-index: 1;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-      margin-top: 60px;
+      justify-content: center;
+      margin-top: 0;
+      text-shadow: 2px 2px #000;
+      font-size: 52px;
+    }
+
+    .sectionFront {
+      z-index: 1;
+      display: flex;
+      flex-direction: row;
+      margin: 0 auto;
+      padding: 16px 32px;
 
       .bookCover {
         width: 300px;
-        animation-duration: 17s;
-        animation-name: productMovement;
-        animation-iteration-count: infinite;
-        animation-timing-function: linear;
-        cursor: pointer;
-        transition: filter 0.4s;
+        height: fit-content;
+        box-shadow: 2px 2px 5px #000;
       }
-      .bookCover:hover {
-        filter: brightness(0.6);
+
+      .bookInfo {
+        max-width: 800px;
+        margin-left: 32px;
+
+        h2 {
+          color: #ff4e4e;
+          // text-transform: uppercase;
+          font-weight: 900;
+          margin: 4px 0 16px;
+          font-size: 36px;
+          text-shadow: 2px 2px #000;
+        }
+
+        p.subheader {
+          display: flex;
+          align-items: center;
+    
+          img {
+            width: 180px;
+            height: fit-content;
+            margin: 0 8px 0 10px;
+          }
+        }
+
+        p {
+          font-size: 16px;
+          line-height: 28px;
+          font-weight: 600;
+          text-shadow: 2px 2px #000;
+        }
       }
-  
+
+      .buttonAlign {
+        display: flex;
+        justify-content: center;
+      }
+
       .amazonbtn {
-        width: 260px;
+        width: 240px;
         margin-top: 40px;
         cursor: pointer;
         transition: all 0.2s;
@@ -120,8 +157,39 @@ img {
   }
 }
 
+.section.cyoa {
+  background-image: url('../../public/assets/missing-planet-bg.png');
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-size: cover;
+  height: 90vh;
+
+  img.imgTitle {
+    width: 720px;
+    height: auto;
+    margin: 0 auto 1em;
+  }
+
+  .subheader {
+    font-weight: 700;
+    margin: 0;
+    font-size: 20px;
+    line-height: 36px;
+    text-shadow: 2px 2px #000;
+  }
+
+  .sectionFront .bookInfo {
+    margin-left: 0;
+    margin-right: 32px;
+
+    h2 {
+      color: #bbffff;
+    }
+  }
+}
+
 .main {
-  flex: 1;
+  height: 100vh;
 }
 
 .books {
@@ -368,6 +436,11 @@ img {
       width: 100%;
     }
   }
+}
+
+.section {
+  height: 300px;
+  z-index: 1;
 }
 
 
