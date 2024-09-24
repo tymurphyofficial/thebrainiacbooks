@@ -19,58 +19,6 @@ export default function Home() {
   const instagramUrl = "https://www.instagram.com/tymurphybooks";
   const youtubeUrl = "https://www.youtube.com/@tylermurphy8963";
   const tiktokUrl = "https://www.tiktok.com/@tymurphyofficial"; 
-  
-
-  // const getContentArt = () => (
-  //   <div className={contentType == 'ART' ? 'artStillsContainer show' : 'artStillsContainer hide'}>
-  //     <Image className='artStillsTitle' src={getTitleArtwork()} alt=''/>
-  //     <h4>Enjoy some artwork from the book!*</h4>
-
-  //     <div className='artStills'>
-  //       <video loop autoPlay muted>
-  //         <source src={'./assets/animate_stills/zombies.mp4'} type="video/mp4" />
-  //       </video>
-  //       <video loop autoPlay muted>
-  //         <source src={'./assets/animate_stills/birds.mp4'} type="video/mp4" />
-  //       </video>
-  //       <video loop autoPlay muted>
-  //         <source src={'./assets/animate_stills/cloaks.mp4'} type="video/mp4" />
-  //       </video>
-  //       <video loop autoPlay muted>
-  //         <source src={'./assets/animate_stills/dunes.mp4'} type="video/mp4" />
-  //       </video>
-  //       <video loop autoPlay muted>
-  //         <source src={'./assets/animate_stills/earth.mp4'} type="video/mp4" />
-  //       </video>
-  //       <video loop autoPlay muted>
-  //         <source src={'./assets/animate_stills/island.mp4'} type="video/mp4" />
-  //       </video>
-  //       <video loop autoPlay muted>
-  //         <source src={'./assets/animate_stills/lighthouse.mp4'} type="video/mp4" />
-  //       </video>
-  //       <video loop autoPlay muted>
-  //         <source src={'./assets/animate_stills/masks.mp4'} type="video/mp4" />
-  //       </video>
-  //       <video loop autoPlay muted>
-  //         <source src={'./assets/animate_stills/monkeys.mp4'} type="video/mp4" />
-  //       </video>
-  //       <video loop autoPlay muted>
-  //         <source src={'./assets/animate_stills/pyramid.mp4'} type="video/mp4" />
-  //       </video>
-  //       <video loop autoPlay muted>
-  //         <source src={'./assets/animate_stills/river.mp4'} type="video/mp4" />
-  //       </video>
-  //       <video loop autoPlay muted>
-  //         <source src={'./assets/animate_stills/smoke.mp4'} type="video/mp4" />
-  //       </video>
-  //       <video loop autoPlay muted>
-  //         <source src={'./assets/animate_stills/waves.mp4'} type="video/mp4" />
-  //       </video>
-
-  //       <p>*Images in book <b><i>do not move</i></b>. This is a physical book, not a painting at Hogwarts.</p>
-  //     </div>
-  //   </div>
-  // );
 
 	const getSocials = () => (
 		<div className='socials'>
@@ -86,13 +34,12 @@ export default function Home() {
 		</div>
 	);
 
-
   return (
     <div className='app'>
       <div className='main'>
         <nav>
           <Image className='logo' src={BrainiacBooksMoon} alt=''/>
-          <Image className='authorName' src={Author} alt=''/>
+          <Image className='authorName mobileHidden' src={Author} alt=''/>
         </nav>
         
         <div className='section'>
