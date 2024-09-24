@@ -148,6 +148,10 @@ export default function Home() {
             <Image className='bookCover' src={BookPlanet} alt='The Missing Planet'/>
           </div>
       </div>
+
+      <footer>
+        <p>Copyright © Ty Murphy 2024</p>
+      </footer>
     </div>
   );
 }
