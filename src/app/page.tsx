@@ -96,17 +96,20 @@ export default function Home() {
         </nav>
         
         <div className='section'>
-					<h1>THE LATEST BY TY MURPHY</h1>
+					<h1 className='mobileHidden'>THE LATEST BY TY MURPHY</h1>
           <div className='sectionFront'>
 						<Image className='bookCover' src={BookMoon} alt=''/>
 
 						<div className='bookInfo'>
-							<h2>What We Found On The Moon</h2>
-							<p className='subheader'>Book 1 of the <Image className="" src={WeAreNotAloneCopy} alt=''/> series.</p>
-							<p>The Youth Space Program is the most ambitious project in the world: train the youngest people in history to walk on the Moon.</p>
-              <p>Billy Robinson has dreamt of space for his entire short life. A brilliant, shy twelve-year-old kid, everything completely changes when -- to his surprise -- he is accepted into the space program!
-              Eight weeks competing against the most ambitious and ruthless youths in the country is going to take everything that he has.</p>
-              <p>But will it be enough for what Billy finds when he gets there?</p>
+							<h2 className='mobileHidden'>What We Found On The Moon</h2>
+              <p className='subheader'>Book 1 of the <Image className="" src={WeAreNotAloneCopy} alt=''/> series.</p>
+
+              <div className="mobileHidden">
+                <p>The Youth Space Program is the most ambitious project in the world: train the youngest people in history to walk on the Moon.</p>
+                <p>Billy Robinson has dreamt of space for his entire short life. A brilliant, shy twelve-year-old kid, everything completely changes when -- to his surprise -- he is accepted into the space program!
+                Eight weeks competing against the most ambitious and ruthless youths in the country is going to take everything that he has.</p>
+                <p>But will it be enough for what Billy finds when he gets there?</p>
+              </div>
 							
 							<div className='buttonAlign'>
 								<a target="_blank" href={productUrls.us.wwfotm} rel="noopener noreferrer">
@@ -126,18 +129,19 @@ export default function Home() {
       </div>
 
       <div className='section cyoa'>
-        <Image src={EmbarkOnCopy} className='imgTitle' alt=''/>
+        <Image src={EmbarkOnCopy} className='imgTitle mobileHidden' alt=''/>
           <div className='sectionFront'>
 
 						<div className='bookInfo'>
-							<h2>The Missing Planet</h2>
-							<div className='subheader'>A Brainiac Choose-Your-Own-Adventure Novel</div>
-							<p>A murky jungle with winding paths. A parched desert with mysteries beneath the sands. A treacherous ocean with the apocalypse at hand. Three different worlds, each more dangerous than the last! Still, that question mark makes you wonder: Is there a fourth planet out there somewhere?</p>
-              
-              <p>YOUR FATE IS IN YOUR HANDS!</p>
-              <p>Think critically, make smart decisions, solve many challenging puzzles and you will return victorious with your missing father and the discovery of who you really are. Act hastily, choose poorly, and you may not return at all…</p>
-							
-              <p>Are YOU up for the challenge?</p>
+							<h2 className='mobileHidden'>The Missing Planet</h2>
+							<div className='subheader'>A BRAINIAC Choose-Your-Own-Adventure</div>
+
+              <div className="mobileHidden">
+                <p>A murky jungle with winding paths. A parched desert with mysteries beneath the sands. A treacherous ocean with the apocalypse at hand. Three different worlds, each more dangerous than the last! Still, that question mark makes you wonder: Is there a fourth planet out there somewhere?</p>
+                <p>YOUR FATE IS IN YOUR HANDS!</p>
+                <p>Think critically, make smart decisions, solve many challenging puzzles and you will return victorious with your missing father and the discovery of who you really are. Act hastily, choose poorly, and you may not return at all…</p>
+                <p>Are YOU up for the challenge?</p>
+              </div>
 
 							<div className='buttonAlign'>
 								<a target="_blank" href={productUrls.us.cyoaPlanet} rel="noopener noreferrer">

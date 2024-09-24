@@ -24,6 +24,7 @@ img {
   color: white;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 
   .main {
     height: 100vh;
@@ -205,4 +206,61 @@ img {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .app {
 
+    .section {
+      h1 {
+        font-size: 32px;
+      }
+
+      .sectionFront {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 8rem;
+
+        .bookCover {
+          width: 260px;
+          margin-bottom: 16px;
+        }
+
+        .bookInfo {
+          margin: 0;
+
+          h2 {
+            font-size: 24px;
+            text-align: center;
+          }
+          p.subheader {
+            flex-direction: column;
+            height: 96px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+
+            img {
+              width: 220px;
+            }
+          }
+        }
+      }
+    }
+
+    .section.cyoa {
+
+      .sectionFront {
+        flex-direction: column-reverse;
+        margin-top: 0;
+
+        .bookInfo {
+          margin: 0;
+        }
+      }
+
+    }
+
+    .mobileHidden {
+      display: none !important;
+    }
+  }
+}
