@@ -33,7 +33,7 @@ export default function Home() {
   useEffect(() => {
     getHomePageData();
     getLibraryData();
-  }, []);
+  }, []);  
 
   return (
     <div className='main'>

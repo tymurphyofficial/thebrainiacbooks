@@ -173,27 +173,6 @@ html {
   }
 }
 
-.main .textBanner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #0A0A0A;
-  padding: 32px 12px 24px;
-
-  h2 {
-    font-size: 44px;
-    color: #F5F1D2;
-    margin: 0;
-  }
-
-  p {
-    font-size: 22px;
-    color: #fff;
-    font-weight: 600;
-  }
-}
-
 @media screen and (max-width: 768px) {
   .main .imageBanner {
     padding: 2rem 1rem;
@@ -210,6 +189,37 @@ html {
   }
 }
 
+.main .textBanner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #0A0A0A;
+  padding: 32px 12px 24px;
+
+  h2 {
+    font-size: 44px;
+    color: #F5F1D2;
+    margin: 0;
+    text-align: center;
+  }
+
+  p {
+    font-size: 22px;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 32px;
+  }
+  p {
+    font-size: 16px;
+  }
+}
 
 .main .videoPlayer {
   padding: 5rem 0 0;

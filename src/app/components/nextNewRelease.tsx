@@ -13,9 +13,7 @@ export const NextNewRelease = ({
   saleSticker,
   promoCode
  }: INextNewRelease) => {
-  console.log({ promoCode });
   
-
   return (
     <div className='nnr-wrapper'>
       <div className='nnr'>
