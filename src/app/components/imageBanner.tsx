@@ -1,12 +1,12 @@
 import { IImageBanner } from '../types';
 import Image from 'next/image';
 
-export const ImageBanner = ({ image, imageMobile }: IImageBanner) => {
+export const ImageBanner = () => {
 
   return (
-    <div className='imageBanner'>
-      <Image className='imageBannerDesktop' src={image.url} alt="no ai no pronouns no propaganda" fill />
-      <Image className='imageBannerMobile' src={imageMobile.url} alt="no ai no pronouns no propaganda" fill />
+    <div className='textBanner'>
+      <h2>100% Human-Crafted Adventures</h2>
+      <p>Absolutely <u>NO</u> AI is used in the writing of any Brainiac book.</p>
     </div>
   );
 }

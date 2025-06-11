@@ -39,14 +39,12 @@ export default function Home() {
     <div className='main'>
       {pageData && (
         <>
-          {pageData?.tickerBanner && <TickerBanner {...pageData.tickerBanner} />}
-          {pageData?.heroBanner && <HeroBanner {...pageData.heroBanner} />}
-          {pageData?.bannerImage1 && <ImageBanner {...pageData.bannerImage1} />}
-          {libraryData && <VideoBanner {...pageData.videoBlock} signup={pageData.ctaSignupBlock} ref={signupRef} libraryData={libraryData}/>}
-          {pageData?.reviewsCollection && <ReviewsBanner {...pageData.reviewsCollection} />}
-          {pageData?.author && <AuthorBanner {...pageData.author} />}
-          {pageData?.contact && <ContactForm {...pageData.contact} />}
-          {pageData?.footer && <Footer {...pageData.footer} />}
+          <TickerBanner {...pageData.tickerBanner} />
+          <HeroBanner {...pageData.heroBanner} />
+          <ImageBanner />
+          <VideoBanner {...pageData.videoBlock} signup={pageData.ctaSignupBlock} ref={signupRef} libraryData={libraryData}/>
+          <ReviewsBanner {...pageData.reviewsCollection} />
+          <Footer {...pageData.footer} />
         </>
       )}
     </div>
