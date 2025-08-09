@@ -21,7 +21,6 @@ const HOME_PAGE_QUERY =`
   page (id: "rhLi0zNgy12Ht8gqB9CnE") {
     ticker {
       text
-      color
     }
     header {
       logo {
@@ -58,6 +57,7 @@ const HOME_PAGE_QUERY =`
         titleImage {
           url
         }
+        titleMaxWidth
         title
         type
         url

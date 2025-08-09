@@ -11,7 +11,6 @@ export interface IHomePage {
 
 export interface ITicker {
   text: string;
-  color?: string;
 }
 
 export interface IHeader {
@@ -51,6 +50,7 @@ export interface IPanel {
   titleImage: {
     url: string;
   }
+  titleMaxWidth: string;
   title: string;
   type: string;
   url: string;
@@ -68,8 +68,6 @@ export interface IHeroWwfotm {
   } 
   url: string;
 }
-
-
 
 interface IMedia {
   url: string;

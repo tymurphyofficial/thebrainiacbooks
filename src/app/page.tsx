@@ -1,39 +1,47 @@
-"use client";
 import { getHomePage } from './api';
 import { IHomePage } from './types';
-import { useEffect, useState,  } from "react";
 
 import { TickerBanner } from './components/ticker';
 import { Header } from './components/header';
 import { NavBar } from './components/navbar';
 import { HeroNew } from './components/heroNew';
+import { BannerSimple } from './components/bannerSimple';
+import { PanelTrio } from './components/panelTrio';
+import { HeroWwfotm } from './components/heroWwfotm';
+import { Footer } from './components/footer';
 
 
-export default function Home() {
-  const [data, setData] = useState<IHomePage>(); 
+export default async function Home() {
+  // const [data, setData] = useState<IHomePage>(); 
 
-  const getHomePageData = async () => {
-    const { data: { page } } = await getHomePage();
-    console.log({ page });
+  // const getHomePageData = async () => {
+  //   const { data: { page } } = await getHomePage();
+  //   console.log({ page });
     
-    setData(page);
-  }
+  //   setData(page);
+  // }
 
-  useEffect(() => {
-    getHomePageData();
-  }, []);  
+  const { data: { page } } = await getHomePage();
+
+  // useEffect(() => {
+    // getHomePageData();
+  // }, []);  
 
   return (
     <div className='main'>
-      {data && (
+      {page && (
         <>
-          <TickerBanner {...data.ticker} />
-          <Header {...data.header} />
-          <NavBar {...data.navBar} />
-          <HeroNew {...data.heroNewestRelease} />
+          <TickerBanner {...page.ticker} />
+          <Header {...page.header} />
+          <NavBar {...page.navBar} />
+          <HeroNew {...page.heroNewestRelease} />
+          <BannerSimple {...page.simpleImageBanner} />
+          <PanelTrio {...page.panelTrioCollection} />
+          <BannerSimple {...page.simpleImageBanner2} />
+          <HeroWwfotm {...page.heroWwfotm} />
+          <Footer />
         </>
       )}
-      
     </div>
   );
 }

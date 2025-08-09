@@ -6,7 +6,10 @@ export const Header = ({ logo }: IHeader) => {
 	return (
     <div className='flex justify-center border-b p-10'>
       <div className='flex justify-between items-center w-full max-w-[1280px]'>
-        <img src={logo.url}/>
+        <a href='/'>
+          <img src={logo.url} className='max-h-[46px]'/>
+        </a>
+       
 
         <div className='flex gap-3'>
           <a href='' target='__blank'>

@@ -1,12 +1,18 @@
+'use client'
 import { ITicker } from '../types';
 import Ticker, { NewsTicker } from 'nice-react-ticker';
+import { useEffect, useState } from 'react';
 
 export const TickerBanner = ({ text }: ITicker) => {
-	const message = `${text} ${text} ${text} ${text} ${text} ${text} ${text}`;
+	const [message, setMessage] = useState('');
+
+	useEffect(() => {
+		setMessage(`${text} --- ${text} --- ${text} --- ${text} --- ${text} --- ${text} --- ${text} --- ${text} --- ${text} --- ${text} --- ${text} --- ${text} --- ${text} --- ${text} --- `);
+	}, []);
 
 	return (
-		<div className='tickerBanner'>
-			<Ticker slideSpeed={500}>
+		<div className='tickerBanner h-[34px] bg-black'>
+			<Ticker slideSpeed={800}>
 				<NewsTicker 
 					id={1} 
 					title={message} 
