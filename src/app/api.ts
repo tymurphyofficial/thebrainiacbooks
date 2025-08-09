@@ -18,141 +18,67 @@ async function fetchGraphQL(query: string, preview = false): Promise<any> {
 }
 
 const HOME_PAGE_QUERY =`
-  page (id: "6py6WLIJUmdcIaco1Jc1Y2") {
-    activeTheme {
-      value
+  page (id: "rhLi0zNgy12Ht8gqB9CnE") {
+    ticker {
+      text
+      color
     }
-    tickerBanner {
-      copy,
-      date, 
-    }
-    heroBanner {
-      backgroundImage {
-        url
-      }
-      titleImage {
-        url
-      }
-      figureImage {
-        url
-      }
-      headerImage {
+    header {
+      logo {
         url
       }
     }
-    nextNewRelease {
-      title,
-      superTitle,
-      description,
-      cta,
-      url,
-      discountCopy,
-      discountActive,
-      image {
-        url
-        width
-        height
-      }
-      saleSticker {
-        url
-      }
-      promoCode
-    }
-    bannerImage1 {
-      image {
-        url
-      }
-      imageMobile {
-        url
+    navBar {
+      navLinksCollection {
+        items {
+          label
+          url
+        }
       }
     }
-    videoBlock {
-      video {
-        url
-      }
-      thumbnail {
-        url
-      }
-      header {
-        url
-      }
+    heroNewestRelease {
       background {
         url
       }
-    }
-    ctaSignupBlock {
-      copy
-      cta
+      title {
+        url
+      }
       url
     }
-    reviewsCollection {
-      items {
-        copy
-        name
-      }
-    }
-    faqCollection {
-      items {
-        question
-        answer
-      }
-    }
-    author {
-      description
-      backgroundImage {
-        url
-      }
-      headshot {
+    simpleImageBanner {
+      media {
         url
       }
     }
-    contact {
-      title
-      copy
-      cta
-    }
-    footer {
-      copy
-      socialsCollection {
-        items {
+    panelTrioCollection {
+      items {
+        background {
           url
-          icon {
-            width
-            height
-            url
-          }
         }
-      }
-    }
-  }
-`;
-
-const LIBRARY_QUERY = `
-	library(id: "2VVEK7ki7JYtPMc2koYWHX") {
-		header
-    booksCollection {
-      items {
-        entryTitle
-        type
+        titleImage {
+          url
+        }
         title
-        description
+        type
         url
-        genre
-        image {
-          url
-          width
-          height
-        }
-        mediaCollection {
-          items {
-            description
-            url
-          }
-        }
-        price,
-        isMysteryBook,
-        releaseDate
       }
+    }
+    simpleImageBanner2 {
+      media {
+        url
+      }
+    }
+    heroWwfotm {
+      background {
+        url
+      }
+      title {
+        url
+      }
+      subtitle {
+        url
+      } 
+      url
     }
   }
 `;
@@ -161,14 +87,6 @@ export async function getHomePage(): Promise<any> {
 	return await fetchGraphQL(
 		`query {
 			${HOME_PAGE_QUERY}
-		}`,
-	);
-}
-
-export async function getLibrary(): Promise<any> {
-	return await fetchGraphQL(
-		`query {
-			${LIBRARY_QUERY}
 		}`,
 	);
 }

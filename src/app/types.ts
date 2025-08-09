@@ -1,183 +1,81 @@
 export interface IHomePage {
-  activeTheme: IActiveTheme;
-  tickerBanner: ITickerBanner;
-  heroBanner: IHeroBanner;
-  nextNewRelease: INextNewRelease;
-  bannerImage1: IImageBanner;
-  bannerImage2: IImageBanner;
-  videoBlock: IVideo;
-  ctaSignupBlock: ICtaSignupBlock;
-  reviewsCollection: IReviews;
-  faqCollection: IFaqs;
-  contact: IContact;
-  author: IAuthor;
-  footer: IFooter;
+  ticker: ITicker;
+  header: IHeader;
+  navBar: INavBar;
+  heroNewestRelease: IHeroNewestRelease;
+  simpleImageBanner: ISimpleImageBanner;
+  panelTrioCollection: IPanelTrioCollection;
+  simpleImageBanner2: ISimpleImageBanner;
+  heroWwfotm: IHeroWwfotm;
 } 
 
-export interface ILibrary {
-  header: string;
-  booksCollection: IBooksCollection;
-} 
+export interface ITicker {
+  text: string;
+  color?: string;
+}
 
-export interface IAsset {
-  title: string;
-  description: string;
-  file: {
+export interface IHeader {
+  logo: IMedia;
+}
+
+export interface INavBar {
+  navLinksCollection: {
+    items: INavLink[];
+  }
+}
+
+export interface IHeroNewestRelease {
+  background: {
     url: string;
-    details: {
-      size: number;
-    };
-    fileName: string;
-    contentType: string;
-  };
-}
-
-export interface IBooksCollection {
-  items: IBook[];
-}
-
-export interface IBook {
-  entryTitle: string;
-  type: string;
-  title: string;
-  description: string;
+  }
+  title: {
+    url: string;
+  }
   url: string;
-  genre: string;
-  image: {
-    url: string;
-    height: number;
-    width: number;
-  };
-  mediaCollection: {
-    items: {
-      description: string;
-      url: string
-    }[];
-  };
-  price: string;
-  isMysteryBook?: boolean;
-  releaseDate?: string;
 }
 
-interface IActiveTheme {
-  value: string;
-}
-
-export interface ITickerBanner {
-  copy: string;
-  date: string;
-}
-
-export interface INextNewRelease {
-  title: string;
-  superTitle: string;
-  description: string;
-  cta: string;
-  url: string;
-  discountCopy: string;
-  discountActive: boolean;
-  image: {
-    url: string;
-    height: number;
-    width: number;
-  }
-  saleSticker: {
-    url: string;
-  }
-  promoCode: string;
-}
-
-export interface IImageBanner {
-  image: {
-    url: string;
-  }
-  imageMobile: {
+export interface ISimpleImageBanner {
+  media: {
     url: string;
   }
 }
 
-export interface IHeroBanner {
-  backgroundImage: {
+export interface IPanelTrioCollection {
+  items: IPanel[];
+}
+
+export interface IPanel {
+  background: {
     url: string;
   }
   titleImage: {
     url: string;
   }
-  figureImage: {
-    url: string;
-  }
-  headerImage: {
-    url: string;
-  }
+  title: string;
+  type: string;
+  url: string;
 }
 
-export interface IVideo {
-  video: {
-    url: string;
-  };
-  thumbnail: {
-    url: string;
-  };
-  header: {
-    url: string;
-  };
+export interface IHeroWwfotm {
   background: {
     url: string;
-  };
-  signup: ICtaSignupBlock;
-  ref: any;
-  libraryData?: ILibrary;
-}
-
-export interface ICtaSignupBlock {
-  copy: string;
-  cta: string;
-  url: string;
-  ref: any;
-}
-
-export interface IReviews {
-  items: {
-    copy: string;
-    name: string;
-  }[];
-}
-
-export interface IFaqs {
-  items: {
-    question: string;
-    answer: string;
-  }[];
-}
-
-export interface IContact {
-  title: string;
-  copy: string;
-  cta: string;
-}
-
-export interface IFooter {
-  copy: string;
-  socialsCollection: {
-    items: {
-      url: string;
-      icon: IIcon;
-    }[]
   }
-}
-
-export interface IIcon {
-  width: string;
-  height: string;
+  title: {
+    url: string;
+  }
+  subtitle: {
+    url: string;
+  } 
   url: string;
 }
 
-export interface IAuthor {
-  description: string;
-  backgroundImage: {
-    url: string;
-  }
-  headshot: {
-    url: string;
-  }
+
+
+interface IMedia {
+  url: string;
+}
+
+interface INavLink {
+  label: string;
+  url: string;
 }
