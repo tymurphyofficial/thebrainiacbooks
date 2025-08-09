@@ -12,21 +12,8 @@ import { Footer } from './components/footer';
 
 
 export default async function Home() {
-  // const [data, setData] = useState<IHomePage>(); 
-
-  // const getHomePageData = async () => {
-  //   const { data: { page } } = await getHomePage();
-  //   console.log({ page });
-    
-  //   setData(page);
-  // }
-
   const { data: { page } } = await getHomePage();
-
-  // useEffect(() => {
-    // getHomePageData();
-  // }, []);  
-
+  
   return (
     <div className='main'>
       {page && (
