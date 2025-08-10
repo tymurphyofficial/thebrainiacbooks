@@ -12,7 +12,7 @@ export const TickerBanner = ({ text }: ITicker) => {
 
 	return (
 		<div className='tickerBanner h-[34px] bg-black'>
-			<Ticker slideSpeed={800}>
+			<Ticker slideSpeed={1200}>
 				<NewsTicker 
 					id={1} 
 					title={message} 
