@@ -72,6 +72,9 @@ const HOME_PAGE_QUERY =`
       background {
         url
       }
+      backgroundVideo {
+        url
+      }
       title {
         url
       }

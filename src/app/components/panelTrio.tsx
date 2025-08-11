@@ -8,7 +8,7 @@ export const PanelTrio = ({ items }: IPanelTrioCollection) => {
         {items.map(item => (
           <div key={item.title} className='group rounded-3xl overflow-hidden h-[604px] md:h-[796px] w-full max-w-[410px]'>
             <div 
-              className='flex self-center w-full bg-center h-full max-h-[364px] md:max-h-[502px] bg-cover group-hover:brightness-[90%] transition-all ease-in' 
+              className='flex self-center w-full bg-center h-full max-h-[364px] md:max-h-[502px] bg-cover group-hover:brightness-[120%] transition-all ease-in' 
               style={{ backgroundImage: `url(${item.background.url})` }}
             >
               <img src={item.titleImage.url} className='h-fit px-5 py-10' style={{ maxWidth: `${item.titleMaxWidth}` }} />

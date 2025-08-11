@@ -60,6 +60,9 @@ export interface IHeroWwfotm {
   background: {
     url: string;
   }
+  backgroundVideo: {
+    url: string;
+  }
   title: {
     url: string;
   }
