@@ -18,14 +18,14 @@ export const Header = ({ logo }: IHeader) => {
         </a>
        
         <div className='hidden md:flex gap-3'>
-          <a href='' target='__blank'>
-            <img src="/assets/icon-instagram.svg" alt="icon instagram" width={24} height={24} />
+          <a href='https://www.instagram.com/tythebrainiac/' target='__blank'>
+            <img src="/assets/icon-instagram.svg" alt="icon instagram" width={32} height={32} />
           </a>
-          <a href='' target='__blank'>
-            <img src="/assets/icon-tiktok.svg" alt="icon tiktok" width={24} height={24} />
+          <a href='https://www.tiktok.com/@tythebrainiac' target='__blank'>
+            <img src="/assets/icon-tiktok.svg" alt="icon tiktok" width={32} height={32} />
           </a>
-          <a href='' target='__blank'>
-            <img src="/assets/icon-youtube.svg" alt="icon youtube" width={24} height={24} />
+          <a href='https://www.youtube.com/@tythebrainiac' target='__blank'>
+            <img src="/assets/icon-youtube.svg" alt="icon youtube" width={32} height={32} />
           </a>
         </div>
       </div>

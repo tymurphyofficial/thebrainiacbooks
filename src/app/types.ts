@@ -80,3 +80,19 @@ interface INavLink {
   label: string;
   url: string;
 }
+
+export interface IBookPanel {
+  cover: {
+    url: string;
+  }
+  background: {
+    url: string;
+  }
+  title: string;
+  type: string;
+  synopsis: {
+    json: any;
+  };
+  cta: string;
+  url: string;
+}
