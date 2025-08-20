@@ -1,8 +1,10 @@
-import { IBookPanel } from '../types';
+import { IBookPanel } from '../app/types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types';
 
 export const BookPanel = ({ cover, background, title, type, synopsis, cta, url }: IBookPanel) => {
+  console.log({ title });
+  
 
   const options = {
     renderNode: {
@@ -23,11 +25,11 @@ export const BookPanel = ({ cover, background, title, type, synopsis, cta, url }
 
         <div className='ml-[60px] px-8 pt-6 pb-4 flex flex-col justify-between bg-black/50 text-white rounded-sm'>
           <div>
-            <div className='text-sm font-light mb-1.5 text-[#e9e9e9]'>{type}</div>
-            <div className='text-2xl font-extrabold mb-3 uppercase'>{title}</div>
+            <div className='text-sm font-light mb-2 text-[#e9e9e9]'>{type}</div>
+            <div className='text-3xl font-extrabold mb-4 uppercase'>{title}</div>
             <div className=''>{documentToReactComponents(synopsis.json, options)}</div>
           </div>
-         
+
           <a href={url} className='font-bold hover:underline' target="_blank">{cta}</a>
         </div>
       </div>

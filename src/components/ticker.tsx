@@ -1,5 +1,5 @@
 'use client'
-import { ITicker } from '../types';
+import { ITicker } from '../app/types';
 import Ticker, { NewsTicker } from 'nice-react-ticker';
 import { useEffect, useState } from 'react';
 

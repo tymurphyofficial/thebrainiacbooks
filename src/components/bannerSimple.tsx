@@ -1,4 +1,4 @@
-import { ISimpleImageBanner } from '../types';
+import { ISimpleImageBanner } from '../app/types';
 
 export const BannerSimple = ({ media: { url } }: ISimpleImageBanner) => {
 

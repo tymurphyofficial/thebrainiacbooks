@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from "react";
-import { IHeroWwfotm } from '../types';
+import { IHeroWwfotm } from '../app/types';
 
 export const HeroWwfotm = ({ background, backgroundVideo, title, subtitle, url }: IHeroWwfotm) => {
   const [viewport, setViewport] = useState({ width: 0, height: 0 });

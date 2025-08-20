@@ -151,3 +151,61 @@ export async function getBooksPage(): Promise<any> {
 		}`,
 	);
 }
+
+
+/*
+ * CYOA page
+ **/
+
+const CYOA_PAGE_QUERY =`
+  pageCyoa (id: "6oWi9n7NtnR5jqwq184CIb") {
+    bannerTop {
+      url
+    }
+    pageBannersCollection {
+      items {
+        title
+        banner {
+          url
+        }
+      }
+    }
+  }
+`;
+
+export async function getCyoaPage(): Promise<any> {
+	return await fetchGraphQL(
+		`query {
+			${CYOA_PAGE_QUERY}
+		}`,
+	);
+}
+
+
+/*
+ * Retrieve all book panels
+ **/
+
+const BOOK_PANEL_QUERY = `
+  releasePanelCollection (limit: 100) {
+    items {
+      title
+      titleImage {
+        url
+      }
+      background {
+        url
+      }
+      type
+      url
+    }
+  }
+`;
+
+export async function getBookPanels(): Promise<any> {
+	return await fetchGraphQL(
+		`query {
+			${BOOK_PANEL_QUERY}
+		}`,
+	);
+}

@@ -1,4 +1,4 @@
-import { IHeader } from '../types';
+import { IHeader } from '../app/types';
 
 export const Header = ({ logo }: IHeader) => {
 

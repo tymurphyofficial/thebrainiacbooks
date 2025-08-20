@@ -1,9 +1,9 @@
 import { getBooksPage } from '../api';
 import { IBookPanel } from '../types';
-import { BookPanel } from '../components/bookPanel';
+import { BookPanel } from '../../components/bookPanel';
 
 
-export default async function Home() {
+export default async function page() {
   const { data: { pageBooks: { booksCollection: { items }} } } = await getBooksPage();  
   
   return (

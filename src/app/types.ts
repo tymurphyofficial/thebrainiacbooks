@@ -4,7 +4,7 @@ export interface IHomePage {
   navBar: INavBar;
   heroNewestRelease: IHeroNewestRelease;
   simpleImageBanner: ISimpleImageBanner;
-  panelTrioCollection: IPanelTrioCollection;
+  panelTrioCollection: IBookTrioCollection;
   simpleImageBanner2: ISimpleImageBanner;
   heroWwfotm: IHeroWwfotm;
 } 
@@ -39,11 +39,11 @@ export interface ISimpleImageBanner {
   }
 }
 
-export interface IPanelTrioCollection {
-  items: IPanel[];
+export interface IBookTrioCollection {
+  items: IBookTile[];
 }
 
-export interface IPanel {
+export interface IBookTile {
   background: {
     url: string;
   }
@@ -95,4 +95,11 @@ export interface IBookPanel {
   };
   cta: string;
   url: string;
+}
+
+export interface IBannerLarge {
+  title: string;
+  banner: {
+    url: string;
+  }
 }

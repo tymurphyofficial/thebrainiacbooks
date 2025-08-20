@@ -1,4 +1,4 @@
-import { IHeroNewestRelease } from '../types';
+import { IHeroNewestRelease } from '../app/types';
 
 export const HeroNew = ({ background, title, url }: IHeroNewestRelease) => {
 
