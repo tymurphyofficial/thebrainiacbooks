@@ -4,7 +4,7 @@ export const Header = ({ logo }: IHeader) => {
 
   
 	return (
-    <div className='flex justify-center border-b p-4 md:p-10'>
+    <div className='flex justify-center border-b p-4 md:p-4'>
       <div className='flex justify-center md:justify-between items-center w-full max-w-[1280px]'>
 
         <img 
@@ -14,7 +14,7 @@ export const Header = ({ logo }: IHeader) => {
         />
 
         <a href='/'>
-          <img src={logo.url} className='max-h-[30px] sm:max-h-[36px] md:max-h-[46px]'/>
+          <img src={logo.url} className='max-h-[60px] sm:max-h-[80px] md:max-h-[120px]'/>
         </a>
        
         <div className='hidden md:flex gap-3'>

@@ -29,7 +29,7 @@ export default async function RootLayout({
           <>
             <TickerBanner {...baseLayout.ticker} />
             <Header {...baseLayout.header} />
-            <NavBar {...baseLayout.navbar} />
+            {/* <NavBar {...baseLayout.navbar} /> */}
           </>
         )}
         {children}
