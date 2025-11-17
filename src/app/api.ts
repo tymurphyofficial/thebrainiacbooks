@@ -58,52 +58,16 @@ export async function getBaseLayout(): Promise<any> {
  **/
 const HOME_PAGE_QUERY =`
   page (id: "rhLi0zNgy12Ht8gqB9CnE") {
-    heroNewestRelease {
-      background {
-        url
-      }
+    videoHeroCampUfo {
       title {
         url
       }
-      url
-    }
-    simpleImageBanner {
-      media {
+      image {
         url
       }
-    }
-    panelTrioCollection {
-      items {
-        background {
-          url
-        }
-        titleImage {
-          url
-        }
-        titleMaxWidth
-        title
-        type
+      video {
         url
       }
-    }
-    simpleImageBanner2 {
-      media {
-        url
-      }
-    }
-    heroWwfotm {
-      background {
-        url
-      }
-      backgroundVideo {
-        url
-      }
-      title {
-        url
-      }
-      subtitle {
-        url
-      } 
       url
     }
   }

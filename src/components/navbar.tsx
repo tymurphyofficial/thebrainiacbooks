@@ -4,8 +4,6 @@ import { INavBar } from '../app/types';
 
 export const NavBar = ({ navLinksCollection: { items } }: INavBar) => {
   const pathname = usePathname();
-  console.log({ pathname });
-  
 
   return (
     <div className='hidden md:flex justify-center border-b px-10 py-8'>

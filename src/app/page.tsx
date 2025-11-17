@@ -1,9 +1,9 @@
 import { getHomePage } from './api';
-import { HeroNew } from '../components/heroNew';
-import { BannerSimple } from '../components/bannerSimple';
-import { BookTileTrio } from '../components/bookTileTrio';
-import { HeroWwfotm } from '../components/heroWwfotm';
-
+// import { HeroNew } from '../components/heroNew';
+// import { BannerSimple } from '../components/bannerSimple';
+// import { BookTileTrio } from '../components/bookTileTrio';
+// import { HeroWwfotm } from '../components/heroWwfotm';
+import { VideoHeroCampUfo } from '@/components/videoHeroCampUfo';
 
 export default async function Home() {
   const { data: { page } } = await getHomePage();
@@ -12,11 +12,7 @@ export default async function Home() {
     <div className='main'>
       {page && (
         <>
-          <HeroNew {...page.heroNewestRelease} />
-          <BannerSimple {...page.simpleImageBanner} />
-          <BookTileTrio {...page.panelTrioCollection} />
-          <BannerSimple {...page.simpleImageBanner2} />
-          <HeroWwfotm {...page.heroWwfotm} />
+          <VideoHeroCampUfo {...page.videoHeroCampUfo} />
         </>
       )}
     </div>

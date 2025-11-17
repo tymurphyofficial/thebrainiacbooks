@@ -2,11 +2,12 @@ export interface IHomePage {
   ticker: ITicker;
   header: IHeader;
   navBar: INavBar;
-  heroNewestRelease: IHeroNewestRelease;
-  simpleImageBanner: ISimpleImageBanner;
-  panelTrioCollection: IBookTrioCollection;
-  simpleImageBanner2: ISimpleImageBanner;
-  heroWwfotm: IHeroWwfotm;
+  heroBannerCampUfo: IHeroBannerCampUfo;
+  // heroNewestRelease: IHeroNewestRelease;
+  // simpleImageBanner: ISimpleImageBanner;
+  // panelTrioCollection: IBookTrioCollection;
+  // simpleImageBanner2: ISimpleImageBanner;
+  // heroWwfotm: IHeroWwfotm;
 } 
 
 export interface ITicker {
@@ -69,6 +70,19 @@ export interface IHeroWwfotm {
   subtitle: {
     url: string;
   } 
+  url: string;
+}
+
+export interface IHeroBannerCampUfo {
+  video: {
+    url: string;
+  }
+  image: {
+    url: string;
+  }
+  title: {
+    url: string;
+  }
   url: string;
 }
 

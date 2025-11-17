@@ -27,7 +27,7 @@ export default async function RootLayout({
       <body className={inter.className}>
         {baseLayout && (
           <>
-            <TickerBanner {...baseLayout.ticker} />
+            {/* <TickerBanner {...baseLayout.ticker} /> */}
             <Header {...baseLayout.header} />
             {/* <NavBar {...baseLayout.navbar} /> */}
           </>
