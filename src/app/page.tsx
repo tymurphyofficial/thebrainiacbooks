@@ -1,8 +1,5 @@
 import { getHomePage } from './api';
-// import { HeroNew } from '../components/heroNew';
-// import { BannerSimple } from '../components/bannerSimple';
-// import { BookTileTrio } from '../components/bookTileTrio';
-// import { HeroWwfotm } from '../components/heroWwfotm';
+import { HeroNew } from '../components/heroNew';
 import { VideoHeroCampUfo } from '@/components/videoHeroCampUfo';
 
 export default async function Home() {
@@ -12,6 +9,7 @@ export default async function Home() {
     <div className='main'>
       {page && (
         <>
+          <HeroNew {...page.heroNewestRelease} />
           <VideoHeroCampUfo {...page.videoHeroCampUfo} />
         </>
       )}

@@ -70,6 +70,15 @@ const HOME_PAGE_QUERY =`
       }
       url
     }
+    heroNewestRelease {
+      title {
+        url
+      }
+      background {
+        url
+      }
+      url
+    }
   }
 `;
 

@@ -15,8 +15,8 @@ export const HeroNew = ({ background, title, url }: IHeroNewestRelease) => {
           <a href={url} 
             target='__blank'
             rel="noopener noreferrer"
-            className='text-[#F0B7FF] font-bold hover:text-black border-white hover:border-black border text-xl rounded-3xl bg-black hover:bg-[#F0B7FF] px-16 py-2 w-fit mt-20 hover:cursor-pointer'
-          >SHOP NOW</a>
+            className='text-[#acf6f6] font-bold hover:text-black border-white hover:border-black border text-xl rounded-3xl bg-black hover:bg-[#acf6f6] px-16 py-2 w-fit mt-20 hover:cursor-pointer'
+          >GET NOW!</a>
         </div>
       </div>
     </div>

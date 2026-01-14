@@ -37,7 +37,7 @@ export const VideoHeroCampUfo = ({ video, image, title, url }: IHeroBannerCampUf
           <source src={video.url} type="video/mp4" />
         </video>
 
-        <div className='flex flex-col z-10 mp-4 md:px-16 mt-14 md:mt-0 md:pt-[108px] pb-[60px] w-full items-center lg:items-start'>
+        <div className='flex flex-col z-10 mp-4 md:px-16 mt-14 md:mt-0 md:pt-[8rem] pb-[60px] max-w-full lg:max-w-[56%] w-full items-center'>
           <div className="flex flex-col items-center max-w-[200px] sm:max-w-[400px] lg:ml-12">
             <img src={title.url} className='h-fit'/>
             <a href={url} 
@@ -47,6 +47,8 @@ export const VideoHeroCampUfo = ({ video, image, title, url }: IHeroBannerCampUf
             >GET NOW!</a>
           </div>
         </div>
+
+        
       </div>
     </div>
   );
